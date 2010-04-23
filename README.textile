@@ -7,7 +7,7 @@ h2. Application list
 
 h2. Troubleshooting
 
-p. When you are creating your own apps make sure you add the exec stuff in your build.xml file in your Android app dir. "Here's the snippet":gist.github.com/376569
+p. When you are creating your own apps make sure you add the exec stuff in your build.xml file in your Android app dir. "Here's the snippet":http://gist.github.com/376569
 
 p. Note that you'll have to change the arg value for the java exec. change the @../gen/singalong/helloduby/R.java@ to something of the form @../gen/your-pkg-path/R.java@. You can leave the rest of the stuff intact.
 
