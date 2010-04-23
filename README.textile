@@ -1,0 +1,40 @@
+h1. Android applications with Duby
+
+
+h2. Application list
+
+* Helloduby - A simple Hello World app in Duby. It uses the XML layout like any other Android app.
+
+h2. Troubleshooting
+
+When you are creating your own apps make sure you add the exec stuff in your build.xml file in your Android app dir. Note that you'll have to change the arg value for the java exec. change the @../gen/singalong/helloduby/R.java@ to something of the form @../gen/your-pkg-path/R.java@. You can leave the rest of the stuff intact.
+
+   @<target name="compile" depends="-resource-src, -aidl"
+            description="Compiles project's .duby files into .class files">
+      <exec executable="javac" dir="gen">
+        <arg value="-d"/>
+        <arg value="../bin/classes"/>
+        <arg value="../gen/singalong/helloduby/R.java"/>
+      </exec>
+      
+      <exec executable="dubyc" dir="src">
+        <env key="CLASSPATH" file="${sdk.dir}/platforms/${target-version}/android.jar" />
+        <arg value="-d" />
+        <arg value="../bin/classes" />
+        <arg value="-c"/>
+        <arg value="../bin/classes" />
+        <arg value="." />
+      </exec>
+    </target>@
+
+By doing the above you'll have the R.layout, R.strings and other R stuff working but in a little different way. You'll have to do:
+   @import "Layout", "singalong.helloduby.R$layout"@
+in your Duby file to be able to refer to layouts like @Layout.main@ instead of @R.layout.main@
+So for drawable, you can do @import "Drawable", "singalong.helloduby.R$drawable"@ and then use Drawable.something. This work around is only until the guys get nested classes working in Duby. Once that works. You'll be free from this aliasing (i guess that's what it's called).
+
+And then in your default.properties file (it's in the root dir of your application directory), enter the following in a new line:
+
+@target-version=android-2.1@
+
+If you have a different version, you might want to set that
+

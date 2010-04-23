@@ -20,6 +20,7 @@
 
     <target name="compile" depends="-resource-src, -aidl"
             description="Compiles project's .duby files into .class files">
+
       <exec executable="javac" dir="gen">
         <arg value="-d"/>
         <arg value="../bin/classes"/>
@@ -33,7 +34,7 @@
         <arg value="-c"/>
         <arg value="../bin/classes" />
         <arg value="." />
-        
       </exec>
+
     </target>
 </project>

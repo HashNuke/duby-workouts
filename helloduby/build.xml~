@@ -17,6 +17,7 @@
         classname="com.android.ant.SetupTask"
         classpathref="android.antlibs" />
     <setup />
+
     <target name="compile" depends="-resource-src, -aidl"
             description="Compiles project's .duby files into .class files">
       <exec executable="javac" dir="gen">
@@ -32,7 +33,7 @@
         <arg value="-c"/>
         <arg value="../bin/classes" />
         <arg value="." />
-        
       </exec>
+
     </target>
 </project>
