@@ -6,6 +6,7 @@ h2. Application list
 * Helloduby - A simple Hello World app in Duby. It uses the XML layout like any other Android app.
 * HelloLinear - the LinearLayout example from the Android site.
 * HelloRelative - the RelativeLayout example from the Android site.
+* HelloTable - the Table example from the Android site.
 
 h2. Troubleshooting
 
