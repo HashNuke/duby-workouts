@@ -25,6 +25,6 @@ p. @target-version=android-2.1@
 
 If you have a different version, you might want to set that
 
-.h2 Apps for Reference
+h2. Apps for Reference
 
 * "Converse":http://darcsden.com/alex/converse: An IRC app by alexsuraci in Duby.
