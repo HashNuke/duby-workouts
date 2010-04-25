@@ -3,7 +3,7 @@ h1. Android applications with Duby
 
 h2. Application list
 
-* Helloduby - A simple Hello World app in Duby. It uses the XML layout like any other Android app.
+* HelloDuby - A simple Hello World app in Duby. It uses the XML layout like any other Android app.
 * HelloLinear - the LinearLayout example from the Android site.
 * HelloRelative - the RelativeLayout example from the Android site.
 * HelloTable - the Table example from the Android site.
@@ -25,3 +25,6 @@ p. @target-version=android-2.1@
 
 If you have a different version, you might want to set that
 
+.h2 Apps for Reference
+
+* "Converse":http://darcsden.com/alex/converse: An IRC app by alexsuraci in Duby.
