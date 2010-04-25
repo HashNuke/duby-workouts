@@ -5,8 +5,8 @@ import "android.widget.TextView"
 import "android.widget.Button"
 import "java.util.Calendar"
 
-import "Layout","singalong.hellodatepicker.R$layout"
-import "ID","singalong.hellodatepicker.R$id"
+import "Layout", "singalong.hellodatepicker.R$layout"
+import "ID", "singalong.hellodatepicker.R$id"
 
 class HelloDatePicker < Activity
 
@@ -20,9 +20,8 @@ class HelloDatePicker < Activity
 
        
     @date_dialog_id = 0
-    @mDateDisplay = findById(ID.dateDisplay)
-    
-    Button(findById(ID.pickDate)).setOnClickListener do |v|
+        
+    Button(findViewById(ID.pickDate)).setOnClickListener do |v|
       showDialog(@date_dialog_id)
     end
     
@@ -31,7 +30,8 @@ class HelloDatePicker < Activity
     @mYear = c.get(Calendar.YEAR);
     @mMonth = c.get(Calendar.MONTH);
     @mDay = c.get(Calendar.DAY_OF_MONTH);
-            
+
+    # UpdateDisplay();
 
   end
 end
