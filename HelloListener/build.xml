@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="HelloDatePicker" default="help">
+<project name="HelloListener" default="help">
 
     <!-- The local.properties file is created and updated by the 'android' tool.
          It contains the path to the SDK. It should *NOT* be checked in in Version
@@ -63,20 +63,23 @@
          build steps are used.
     -->
     <setup />
-    <target name="compile" depends="-resource-src, -aidl" description="Compiles project's .duby files into .class files">
+        <target name="compile" depends="-resource-src, -aidl"
+            description="Compiles project's .duby files into .class files">
+
       <exec executable="javac" dir="gen">
-	      <arg value="-d"/>
-	      <arg value="../bin/classes"/>
-	      <arg value="../gen/singalong/hellodatepicker/R.java"/>
+        <arg value="-d"/>
+        <arg value="../bin/classes"/>
+        <arg value="../gen/singalong/hellolistener/R.java"/>
+      </exec>
+      
+      <exec executable="dubyc" dir="src">
+        <env key="CLASSPATH" file="${sdk.dir}/platforms/${target-version}/android.jar" />
+        <arg value="-d" />
+        <arg value="../bin/classes" />
+        <arg value="-c"/>
+        <arg value="../bin/classes" />
+        <arg value="." />
       </exec>
 
-      <exec executable="dubyc" dir="src">
-	      <env key="CLASSPATH" file="${sdk.dir}/platforms/${target-version}/android.jar" />
-	      <arg value="-d" />
-	      <arg value="../bin/classes" />
-	      <arg value="-c"/>
-	      <arg value="../bin/classes" />
-	      <arg value="." />
-      </exec>
     </target>
 </project>
