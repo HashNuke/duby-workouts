@@ -12,7 +12,7 @@ import "ViewOnClickListener", "android.view.View$OnClickListener"
 class HelloListener < Activity; implements ViewOnClickListener
 
   def initialize
-    @btn = Button.new(Context(self))
+    @btn = Button.new(self)
   end
   
   def onCreate(savedInstanceState:Bundle)
@@ -20,7 +20,7 @@ class HelloListener < Activity; implements ViewOnClickListener
     setContentView(Layout.main)
 
     @btn = findViewById(ID.button)
-    @btn.setOnClickListener(Context(self))
+    @btn.setOnClickListener(self)
     updateTime()
   end
 
