@@ -22,6 +22,7 @@ class HelloListener < Activity; implements ViewOnClickListener
     @btn = findViewById(ID.button)
     @btn.setOnClickListener(self)
     updateTime()
+
   end
 
   def onClick(view:View)
